@@ -31,7 +31,7 @@ const Producto = mongoose.model("Producto", productoSchema);
 
 async function conectarDB() {
   try {
-    console.log("MONGODB_URI =", process.env.MONGODB_URI);
+    cconsole.log("MONGODB_URI =", JSON.stringify(process.env.MONGODB_URI));
 
     await mongoose.connect(process.env.MONGODB_URI);
 
