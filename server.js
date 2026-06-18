@@ -31,7 +31,10 @@ const Producto = mongoose.model("Producto", productoSchema);
 
 async function conectarDB() {
   try {
+    console.log("MONGODB_URI =", process.env.MONGODB_URI);
+
     await mongoose.connect(process.env.MONGODB_URI);
+
     console.log("✅ Conectado a MongoDB Atlas");
   } catch (error) {
     console.error("❌ Error al conectar:");
@@ -115,5 +118,5 @@ app.delete("/api/productos/:id", async (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-console.log(`🚀 Servidor corriendo en el puerto ${PORT}`);
+  console.log(`🚀 Servidor corriendo en el puerto ${PORT}`);
 });
